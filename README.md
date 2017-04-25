@@ -6,7 +6,7 @@
 </h1>
 
 
-环境：Ubuntu14.04（64位）、KinectV1、四轮差速驱动小车    注:不适用于KinectV2</br>
+环境：Ubuntu14.04（64位）、KinectV1、四轮差速驱动小车     注:以下步骤在小车上位机上进行、不适用于KinectV2</br>
 
 *   [安装ROS](#安装ROS)
 *   [安装KinectV1驱动](#安装KinectV1驱动)
@@ -18,6 +18,8 @@
 *   [ROS与底层通信](#ROS与底层通信)
 *   [导航](#导航)
 *   [远程操控](#远程操控)
+    *   [在远程操控机器上](#在远程操控机器上)
+    *   [在小车上位机上](#在小车上位机上)
 
 <h2 id="安装ROS">安装ROS</h2>
 
@@ -39,7 +41,10 @@ sudo apt-get install python-rosinstall
 ```
 sudo apt-get install ros-indigo-openni-* ros-indigo-openni2-* ros-indigo-freenect-*
 ```
-测试:roslaunch freenect_launch freenect.launch depth_registration:=true</br>
+测试:</br>
+```
+roslaunch freenect_launch freenect.launch depth_registration:=true
+```
 参考:http://www.ncnynl.com/archives/201609/794.html</br>
 
 <h2 id="伪造激光数据">伪造激光数据</h2>
@@ -84,8 +89,10 @@ nano scan.launch
     </include>
 </launch>
 ```
-测试:roslaunch ~/launch/scan.launch</br>
-
+测试:</br>
+```
+roslaunch ~/launch/scan.launch
+```
 <h2 id="安装RTAB-Map">安装RTAB-Map</h2>
 
 ```
@@ -147,6 +154,7 @@ cd ~/catkin_ws/src/linorobot_4wd/param</br>
 http://wiki.ros.org/navigation/Tutorials/RobotSetup</br>
 
 <h2 id="远程操控">远程操控</h2>
+<h4 id="在远程操控机器上">在远程操控机器上</h4>
 
 先进行第一步安装ROS，然后安装rviz</br>
 ```
@@ -155,9 +163,12 @@ sudo apt-get install ros-indigo-rviz-*
 ifconfig查看本机ip地址，假设为10.18.228.187</br>
 在每个终端需要</br>
 ```
-export ROS_IP=10.18.228.187&&export ROS_MASTER_URI=http://10.18.241.138:11311/
+export ROS_IP=10.18.228.187 && export ROS_MASTER_URI=http://10.18.241.138:11311/
+```
 ```
 终端1:rosrun rviz rviz</br>
+```
+<h4 id="在小车上位机上">在小车上位机上</h4>
 
 ifconfig查看小车上位机(NUCi7)ip地址，假设为10.18.241.138</br>
 在每个终端需要</br>
