@@ -20,6 +20,8 @@
 *   [远程操控](#远程操控)
     *   [在小车上位机上](#在小车上位机上)
     *   [在远程操控机器上](#在远程操控机器上)
+*   [相关资料](#相关资料)
+*   [TODO](#TODO)
 
 <h2 id="安装ROS">安装ROS</h2>
 
@@ -191,7 +193,7 @@ export ROS_IP=10.18.228.187 && export ROS_MASTER_URI=http://10.18.241.138:11311/
 ```
 接下来在rviz订阅相关话题就可以了</br>
 
-## 相关资料
+<h2 id="相关资料">相关资料</h2>
 
 - [ROS入门正确姿势](https://zhuanlan.zhihu.com/p/24903381)
 - [ROS官网rviz介绍](http://wiki.ros.org/rviz/)
@@ -210,7 +212,8 @@ export ROS_IP=10.18.228.187 && export ROS_MASTER_URI=http://10.18.241.138:11311/
 - [SLAM相关汇总](http://www.slamcn.org)
 - [OpenSLAM](http://www.openslam.org)
 
-## TODO:
+<h2 id="TODO">TODO</h2>
+
 - [x] 初步构建文档
 - [ ] 设定TF转换关系
 - [ ] KinectV1->KinectV2
