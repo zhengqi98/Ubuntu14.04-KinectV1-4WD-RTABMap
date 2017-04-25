@@ -20,24 +20,7 @@
 *   [远程操控](#远程操控)
 
 <h2 id="安装ROS">安装ROS</h2>
-<h2 id="安装KinectV1驱动">安装KinectV1驱动</h2>
-<h2 id="伪造激光数据">伪造激光数据</h2>
-<h3 id="创建ROS工作空间">创建ROS工作空间</h3>
-<h3 id="编译depthimage_to_laserscan">编译depthimage_to_laserscan</h3>
-<h2 id="合并Kinect启动文件">合并Kinect启动文件</h2>
-<h2 id="安装RTAB-Map">安装RTAB-Map</h2>
-<h2 id="ROS与底层通信">ROS与底层通信</h2>
-<h2 id="导航">导航</h2>
-<h2 id="远程操控">远程操控</h2>
-    
-## Contents
 
-- [ROS Installation](#ros-installation)
-- [KinectV1](#kinectv1)
-- [Depthimage_to_laserscan](#depthimage-to-laserscan)
-	   -[Create ROS Package](#create-ros-package)
-
-## 安装ROS
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -51,15 +34,17 @@ sudo apt-get install python-rosinstall
 ```
 参考:http://wiki.ros.org/indigo/Installation/Ubuntu</br>
 
-## 安装KinectV1驱动
+<h2 id="安装KinectV1驱动">安装KinectV1驱动</h2>
+
 ```
 sudo apt-get install ros-indigo-openni-* ros-indigo-openni2-* ros-indigo-freenect-*
 ```
 测试:roslaunch freenect_launch freenect.launch depth_registration:=true</br>
 参考:http://www.ncnynl.com/archives/201609/794.html</br>
 
-## 伪造激光数据</br>
-1.创建ROS工作空间</br>
+<h2 id="伪造激光数据">伪造激光数据</h2>
+<h4 id="创建ROS工作空间">创建ROS工作空间</h4>
+
 ```
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
@@ -69,7 +54,8 @@ echo "source ~/catkin_ws/src/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 参考:http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment</br>
-2.编译depthimage_to_laserscan</br>
+<h4 id="编译depthimage_to_laserscan">编译depthimage_to_laserscan</h4>
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/ros-perception/depthimage_to_laserscan
@@ -77,7 +63,8 @@ cd .. && catkin_make
 ```
 参考:http://wiki.ros.org/depthimage_to_laserscan</br>
 
-四、合并Kinect启动文件</br>
+<h2 id="合并Kinect启动文件">合并Kinect启动文件</h2>
+
 ```
 sudo apt-get install nano
 mkdir ~/launch && cd ~/launch
@@ -99,7 +86,8 @@ nano scan.launch
 ```
 测试:roslaunch ~/launch/scan.launch</br>
 
-五、安装RTAB-Map</br>
+<h2 id="安装RTAB-Map">安装RTAB-Map</h2>
+
 ```
 sudo apt-get install ros-indigo-rtabmap-*
 roscd rtabmap_ros/launch
@@ -116,6 +104,14 @@ sudo nano rgbd_mapping.launch
 测试:roslaunch rtabmap_ros rgbd_mapping.launch rtabmap_args:="--delete_db_on_start" rtabmapviz:=false
 ```
 注:需要在启动kinect的前提下才能使用</br>
+<h2 id="ROS与底层通信">ROS与底层通信</h2>
+<h2 id="导航">导航</h2>
+<h2 id="远程操控">远程操控</h2>
+    
+
+
+五、安装RTAB-Map</br>
+
 
 六、ROS与底层通信</br>
 ```
