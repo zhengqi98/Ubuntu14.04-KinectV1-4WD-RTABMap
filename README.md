@@ -7,7 +7,7 @@
 
 
 环境：Ubuntu14.04（64位）、KinectV1、四轮差速驱动小车     注:以下步骤在小车上位机上进行、不适用于KinectV2</br>
-
+## 目录
 *   [安装ROS](#安装ROS)
 *   [安装KinectV1驱动](#安装KinectV1驱动)
 *   [伪造激光数据](#伪造激光数据)
@@ -114,6 +114,8 @@ sudo nano rgbd_mapping.launch
 
 <h2 id="ROS与底层通信">ROS与底层通信</h2>
 
+注：假设下位机已经烧录好程序</br>
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/grassjelly/linorobot_4wd.git
@@ -149,8 +151,11 @@ arduino_params.yaml是基础的参数配置文件，如轮胎直径、轮胎间�
 roslaunch linorobot_4wd navigate.launch
 ```
 调参:</br>
-cd ~/catkin_ws/src/linorobot_4wd/param</br>
-里面的五个文件都是导航相关的配置文件，参数说明可参考:http://www.cnblogs.com/zjiaxing/p/5559382.html</br>
+```
+cd ~/catkin_ws/src/linorobot_4wd/param && ls
+```
+里面的五个文件都是导航相关的配置文件，参数说明可参考:</br>
+http://www.cnblogs.com/zjiaxing/p/5559382.html</br>
 http://wiki.ros.org/navigation/Tutorials/RobotSetup</br>
 
 <h2 id="远程操控">远程操控</h2>
