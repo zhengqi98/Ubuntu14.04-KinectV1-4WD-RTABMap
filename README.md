@@ -1,6 +1,43 @@
 # Ubuntu14.04-KinectV1-4WD-RTABMap
+<h1 align="left">
+	<img width="400" src="https://github.com/xzq-forever/Ubuntu14.04-KinectV1-4WD-RTABMap/blob/master/test1.png" alt="test1">
+	<br>
+	<br>
+</h1>
+
+
 环境：Ubuntu14.04（64位）、KinectV1、四轮差速驱动小车    注:不适用于KinectV2</br>
-一、安装ROS（14.04对应indigo）</br>
+
+*   [安装ROS](#安装ROS)
+*   [安装KinectV1驱动](#安装KinectV1驱动)
+*   [伪造激光数据](#伪造激光数据)
+    *   [创建ROS工作空间](#创建ROS工作空间)
+    *   [编译depthimage_to_laserscan](#编译depthimage_to_laserscan)
+*   [合并Kinect启动文件](#合并Kinect启动文件)
+*   [安装RTAB-Map](#安装RTAB-Map)
+*   [ROS与底层通信](#ROS与底层通信)
+*   [导航](#导航)
+*   [远程操控](#远程操控)
+
+<h2 id="安装ROS">安装ROS</h2>
+<h2 id="安装KinectV1驱动">安装KinectV1驱动</h2>
+<h2 id="伪造激光数据">伪造激光数据</h2>
+<h3 id="创建ROS工作空间">创建ROS工作空间</h3>
+<h3 id="编译depthimage_to_laserscan">编译depthimage_to_laserscan</h3>
+<h2 id="合并Kinect启动文件">合并Kinect启动文件</h2>
+<h2 id="安装RTAB-Map">安装RTAB-Map</h2>
+<h2 id="ROS与底层通信">ROS与底层通信</h2>
+<h2 id="导航">导航</h2>
+<h2 id="远程操控">远程操控</h2>
+    
+## Contents
+
+- [ROS Installation](#ros-installation)
+- [KinectV1](#kinectv1)
+- [Depthimage_to_laserscan](#depthimage-to-laserscan)
+	   -[Create ROS Package](#create-ros-package)
+
+## 安装ROS
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -14,14 +51,14 @@ sudo apt-get install python-rosinstall
 ```
 参考:http://wiki.ros.org/indigo/Installation/Ubuntu</br>
 
-二、安装KinectV1驱动</br>
+## 安装KinectV1驱动
 ```
 sudo apt-get install ros-indigo-openni-* ros-indigo-openni2-* ros-indigo-freenect-*
 ```
 测试:roslaunch freenect_launch freenect.launch depth_registration:=true</br>
 参考:http://www.ncnynl.com/archives/201609/794.html</br>
 
-三、安装depthimage_to_laserscan</br>
+## 伪造激光数据</br>
 1.创建ROS工作空间</br>
 ```
 mkdir -p ~/catkin_ws/src
@@ -40,7 +77,7 @@ cd .. && catkin_make
 ```
 参考:http://wiki.ros.org/depthimage_to_laserscan</br>
 
-四、将kinectV1驱动文件与depthimage_to_laserscan合并成一个launch文件</br>
+四、合并Kinect启动文件</br>
 ```
 sudo apt-get install nano
 mkdir ~/launch && cd ~/launch
@@ -110,7 +147,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 arduino_params.yaml是基础的参数配置文件，如轮胎直径、轮胎间距等</br>
 参考:https://linorobot.org</br>
 
-七、导航文件</br>
+七、导航</br>
 ```
 roslaunch linorobot_4wd navigate.launch
 ```
