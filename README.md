@@ -18,8 +18,8 @@
 *   [ROS与底层通信](#ROS与底层通信)
 *   [导航](#导航)
 *   [远程操控](#远程操控)
-    *   [在远程操控机器上](#在远程操控机器上)
     *   [在小车上位机上](#在小车上位机上)
+    *   [在远程操控机器上](#在远程操控机器上)
 
 <h2 id="安装ROS">安装ROS</h2>
 
@@ -159,20 +159,7 @@ http://www.cnblogs.com/zjiaxing/p/5559382.html</br>
 http://wiki.ros.org/navigation/Tutorials/RobotSetup</br>
 
 <h2 id="远程操控">远程操控</h2>
-<h4 id="在远程操控机器上">在远程操控机器上</h4>
 
-先进行第一步安装ROS，然后安装rviz</br>
-```
-sudo apt-get install ros-indigo-rviz-*
-```
-ifconfig查看本机ip地址，假设为10.18.228.187</br>
-在每个终端需要</br>
-```
-export ROS_IP=10.18.228.187 && export ROS_MASTER_URI=http://10.18.241.138:11311/
-```
-```
-终端1:rosrun rviz rviz</br>
-```
 <h4 id="在小车上位机上">在小车上位机上</h4>
 
 ifconfig查看小车上位机(NUCi7)ip地址，假设为10.18.241.138</br>
@@ -188,9 +175,26 @@ roslaunch ~/launch/arduino.launch
 终端4:roslaunch linorobot_4wd navigate.launch
 ```
 
+<h4 id="在远程操控机器上">在远程操控机器上</h4>
+
+先进行第一步安装ROS，然后安装rviz</br>
+```
+sudo apt-get install ros-indigo-rviz-*
+```
+ifconfig查看本机ip地址，假设为10.18.228.187</br>
+在每个终端需要</br>
+```
+export ROS_IP=10.18.228.187 && export ROS_MASTER_URI=http://10.18.241.138:11311/
+```
+```
+终端1:rosrun rviz rviz
+```
+接下来在rviz订阅相关话题就可以了</br>
+
 ## 相关资料
 
 - [ROS入门正确姿势](https://zhuanlan.zhihu.com/p/24903381)
+- [ROS官网rviz介绍](http://wiki.ros.org/rviz/)
 - [ROS官网rtabmap_ros介绍](http://wiki.ros.org/rtabmap_ros)
 - [RTAB-Map官网介绍](https://introlab.github.io/rtabmap)
 - [RTAB-Map原理中文解析](http://blog.csdn.net/u012700322/article/details/51898726)
@@ -206,6 +210,13 @@ roslaunch ~/launch/arduino.launch
 - [SLAM相关汇总](http://www.slamcn.org)
 - [OpenSLAM](http://www.openslam.org)
 
-
-
+## TODO:
+- [x] 初步构建文档
+- [ ] 设定TF转换关系
+- [ ] KinectV1->KinectV2
+- [ ] NUCi7
+- [ ] 4WD->Mecanum
+- [ ] 二维+三维显示
+- [ ] 里程计融合
+- [ ] 看各文件源码
 
