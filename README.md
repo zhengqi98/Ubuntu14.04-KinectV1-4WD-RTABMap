@@ -104,16 +104,9 @@ sudo nano rgbd_mapping.launch
 测试:roslaunch rtabmap_ros rgbd_mapping.launch rtabmap_args:="--delete_db_on_start" rtabmapviz:=false
 ```
 注:需要在启动kinect的前提下才能使用</br>
+
 <h2 id="ROS与底层通信">ROS与底层通信</h2>
-<h2 id="导航">导航</h2>
-<h2 id="远程操控">远程操控</h2>
-    
 
-
-五、安装RTAB-Map</br>
-
-
-六、ROS与底层通信</br>
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/grassjelly/linorobot_4wd.git
@@ -143,7 +136,8 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 arduino_params.yaml是基础的参数配置文件，如轮胎直径、轮胎间距等</br>
 参考:https://linorobot.org</br>
 
-七、导航</br>
+<h2 id="导航">导航</h2>
+
 ```
 roslaunch linorobot_4wd navigate.launch
 ```
@@ -152,7 +146,8 @@ cd ~/catkin_ws/src/linorobot_4wd/param</br>
 里面的五个文件都是导航相关的配置文件，参数说明可参考:http://www.cnblogs.com/zjiaxing/p/5559382.html</br>
 http://wiki.ros.org/navigation/Tutorials/RobotSetup</br>
 
-八、远程操控</br>
+<h2 id="远程操控">远程操控</h2>
+
 先进行第一步安装ROS，然后安装rviz</br>
 ```
 sudo apt-get install ros-indigo-rviz-*
@@ -176,24 +171,24 @@ roslaunch ~/launch/arduino.launch
 终端3:roslaunch rtabmap_ros rgbd_mapping.launch rtabmap_args:="--delete_db_on_start" rtabmapviz:=false
 终端4:roslaunch linorobot_4wd navigate.launch
 ```
-相关资料:
-https://zhuanlan.zhihu.com/p/24903381(ROS入门正确姿势)
-http://wiki.ros.org/rtabmap_ros(rtabmap_ros)
-https://introlab.github.io/rtabmap(RTAB-Map官网介绍)
-http://blog.csdn.net/u012700322/article/details/51898726(RTAB-Map原理中文解析)
-http://www.rosclub.cn/thread-25.html(rtabmap_ros+KinectV1使用)
-http://wiki.ros.org/navigation(导航相关)
-http://blog.exbot.net/archives/1129(navigation解析)
-https://linorobot.org(2WD、4WD、Ackermann、Mecanum)
-http://www.ncnynl.com/archives/201612/1203.html(搭建ROS小车底盘A)
-http://www.ncnynl.com/archives/201703/1414.html(搭建ROS小车底盘B)
-http://www.ncnynl.com/archives/201701/1231.html(ROS与SLAM教程)
-http://www.ncnynl.com/archives/201703/1436.html(ROS与深度摄像头教程)
-http://www.ncnynl.com/archives/201609/787.html(turtlebot入门)
-http://www.slamcn.org(SLAM相关汇总)
-http://www.openslam.org(各种SLAM)
-泡泡机器人公众号
-高博新书:视觉SLAM十四讲
+
+## 相关资料
+
+- [ROS入门正确姿势](https://zhuanlan.zhihu.com/p/24903381)
+- [ROS官网rtabmap_ros介绍](http://wiki.ros.org/rtabmap_ros)
+- [RTAB-Map官网介绍](https://introlab.github.io/rtabmap)
+- [RTAB-Map原理中文解析](http://blog.csdn.net/u012700322/article/details/51898726)
+- [rtabmap_ros+KinectV1使用](http://www.rosclub.cn/thread-25.html)
+- [ROS官网Navigation介绍](https://github.com/sindresorhus/awesome-electron)
+- [Navigation解析](http://blog.exbot.net/archives/1129)
+- [linorobot介绍](https://linorobot.org)
+- [搭建ROS小车底盘A](http://www.ncnynl.com/archives/201612/1203.html)
+- [搭建ROS小车底盘B](http://www.ncnynl.com/archives/201703/1414.html)
+- [ROS与SLAM教程](http://www.ncnynl.com/archives/201701/1231.html)
+- [ROS与深度摄像头教程](http://www.ncnynl.com/archives/201703/1436.html)
+- [Turtlebot入门教程](http://www.ncnynl.com/archives/201609/787.html)
+- [SLAM相关汇总](http://www.slamcn.org)
+- [OpenSLAM](http://www.openslam.org)
 
 
 
