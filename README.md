@@ -6,7 +6,7 @@
 </h1>
 
 
-环境：Ubuntu14.04（64位）、KinectV1、四轮差速驱动小车     注:以下步骤在小车上位机上进行、不适用于KinectV2</br>
+环境：Ubuntu14.04（64位）+KinectV1+四轮差速驱动小车     注:以下步骤在小车上位机上进行、不适用于KinectV2</br>
 ## 目录
 *   [安装ROS](#安装ROS)
 *   [安装KinectV1驱动](#安装KinectV1驱动)
