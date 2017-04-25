@@ -206,6 +206,7 @@ export ROS_IP=10.18.228.187 && export ROS_MASTER_URI=http://10.18.241.138:11311/
 - [linorobot介绍](https://linorobot.org)
 - [搭建ROS小车底盘A](http://www.ncnynl.com/archives/201612/1203.html)
 - [搭建ROS小车底盘B](http://www.ncnynl.com/archives/201703/1414.html)
+- [小车校准](http://www.rosclub.cn/post-113.html)
 - [ROS与SLAM教程](http://www.ncnynl.com/archives/201701/1231.html)
 - [ROS与深度摄像头教程](http://www.ncnynl.com/archives/201703/1436.html)
 - [Turtlebot入门教程](http://www.ncnynl.com/archives/201609/787.html)
